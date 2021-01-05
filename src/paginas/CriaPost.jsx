@@ -10,8 +10,8 @@ const CriaPost = () => {
           title: "Meu post",
           body: "",
           metadescription: "",
-          categoria: "",
-          subcategoria: "",
+          categoria: "bem-estar",
+          subcategoria: "saude",
         }}
         onSubmit={(infos) => {
           console.log(infos);
@@ -70,9 +70,8 @@ const CriaPost = () => {
                 placeholder="Conteúdo"
                 required
               >
-                <option value="teste">Teste</option>
-                <option value="teste">Teste</option>
-                <option value="teste">Teste</option>
+                <option value="bem-estar">Bem-estar</option>
+                <option value="comportamento">Comportamento</option>
               </Field>
               <label className="input-label" htmlFor="body">
                 Categorias
@@ -88,9 +87,10 @@ const CriaPost = () => {
                 placeholder="Conteúdo"
                 required
               >
-                <option value="teste">Teste</option>
-                <option value="teste">Teste</option>
-                <option value="teste">Teste</option>
+                <option value="saude">Saúde</option>
+                <option value="higiene">Higiene</option>
+                <option value="treinamento">Treinamento</option>
+                <option value="educacao">Educação</option>
               </Field>
               <label className="input-label" htmlFor="body">
                 SubCategoria
@@ -98,7 +98,7 @@ const CriaPost = () => {
             </div>
           </fieldset>
 
-          <button className="botao">Criar</button>
+          <button type="submit" className="botao">Criar</button>
         </Form>
       </Formik>
     </section>
