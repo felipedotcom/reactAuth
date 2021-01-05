@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
-import '../assets/css/componentes/inputs.css'
+import '../assets/css/componentes/inputs.css';
+import '../assets/css/componentes/botao.css';
 
 const CriaPost = () => {
   return (
