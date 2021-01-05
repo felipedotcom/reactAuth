@@ -12,9 +12,9 @@ const ListaCategorias = () => {
   return (
     <ul className="lista-categorias container flex">
       {categorias.map((categoria) => (
-        <Link to={`/categoria/${categoria.id}`}>
+        <Link to={`/categoria/${categoria.nome}`}>
           <li
-            className={`lista-categorias__categoria lista-categorias__categoria--${categoria.id}`}
+            className={`lista-categorias__categoria lista-categorias__categoria--${categoria.nome}`}
           >
             {categoria.nome}
           </li>
