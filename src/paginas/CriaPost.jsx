@@ -1,9 +1,9 @@
-import React from 'react';
-import { Formik, Field, Form } from 'formik';
-import '../assets/css/componentes/inputs.css';
-import '../assets/css/componentes/botao.css';
+import React from "react";
+import { Formik, Field, Form } from "formik";
+import "../assets/css/componentes/inputs.css";
+import "../assets/css/componentes/botao.css";
 
-import { cria } from '../api/posts';
+import { cria } from "../api/posts";
 
 const CriaPost = () => {
   return (
@@ -13,14 +13,15 @@ const CriaPost = () => {
         <Formik
           initialValues={{
             //Puxa pelo campo name do Field
-            title: 'Meu post',
-            body: '',
-            metadescription: '',
-            categoria: '',
-            subcategoria: '',
+            title: "Meu post",
+            body: "",
+            metadescription: "",
+            categoria: "",
+            subcategoria: "",
           }}
-          onSubmit={(infos) => {
-            console.log(infos);
+          onSubmit={async (infos) => {
+            const resp = await cria(infos);
+            console.log(resp);
           }}
         >
           <Form className="formulario flex flex--coluna">
