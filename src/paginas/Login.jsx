@@ -1,8 +1,8 @@
-import React from "react";
-import { Formik, Field, Form } from "formik";
-import { fazerLogin } from "../api/usuarios"
-import "../assets/css/componentes/inputs.css";
-import "../assets/css/componentes/botao.css";
+import React from 'react';
+import { Formik, Field, Form } from 'formik';
+import { fazerLogin } from '../api/usuarios';
+import '../assets/css/componentes/inputs.css';
+import '../assets/css/componentes/botao.css';
 
 const Login = () => {
   return (
@@ -12,13 +12,13 @@ const Login = () => {
         <Formik
           initialValues={{
             //Puxa pelo campo name do Field
-            email: "",
-            senha: "",
+            email: '',
+            senha: '',
           }}
           onSubmit={async (infos) => {
             const resp = await fazerLogin(infos);
-            console.log(infos);
-            console.log('resposta: ' + resp)
+            console.log(resp);
+            console.log(resp.headers.Authorization)
           }}
         >
           <Form className="formulario flex flex--coluna">
@@ -58,7 +58,7 @@ const Login = () => {
         </Formik>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
