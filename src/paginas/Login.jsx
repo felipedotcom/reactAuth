@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
+import { fazerLogin } from "../api/usuarios"
 import "../assets/css/componentes/inputs.css";
 import "../assets/css/componentes/botao.css";
 
@@ -15,8 +16,9 @@ const Login = () => {
             senha: "",
           }}
           onSubmit={async (infos) => {
-           /*  const resp = await cria(infos); */
+            const resp = await fazerLogin(infos);
             console.log(infos);
+            console.log('resposta: ' + resp)
           }}
         >
           <Form className="formulario flex flex--coluna">
@@ -36,21 +38,21 @@ const Login = () => {
               </div>
               <div className="input-container">
                 <Field
-                  name="metadescription"
-                  id="metadescription"
+                  name="senha"
+                  id="senha"
                   className="input"
-                  type="text"
-                  placeholder="Descrição do post"
+                  type="password"
+                  placeholder="Senha"
                   required
                 />
-                <label className="input-label" htmlFor="metadescription">
-                  Descrição do post
+                <label className="input-label" htmlFor="senha">
+                  Senha
                 </label>
               </div>
             </fieldset>
 
             <button type="submit" className="botao">
-              Criar
+              Fazer login
             </button>
           </Form>
         </Formik>
