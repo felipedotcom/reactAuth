@@ -1,7 +1,9 @@
-import React from "react";
-import { Formik, Field, Form } from "formik";
+import React from 'react';
+import { Formik, Field, Form } from 'formik';
 import '../assets/css/componentes/inputs.css';
 import '../assets/css/componentes/botao.css';
+
+import { cria } from '../api/posts';
 
 const CriaPost = () => {
   return (
@@ -11,11 +13,11 @@ const CriaPost = () => {
         <Formik
           initialValues={{
             //Puxa pelo campo name do Field
-            title: "Meu post",
-            body: "",
-            metadescription: "",
-            categoria: "",
-            subcategoria: "",
+            title: 'Meu post',
+            body: '',
+            metadescription: '',
+            categoria: '',
+            subcategoria: '',
           }}
           onSubmit={(infos) => {
             console.log(infos);
@@ -23,7 +25,9 @@ const CriaPost = () => {
         >
           <Form className="formulario flex flex--coluna">
             <fieldset>
-              <legend className="formulario__legenda">Informações do post</legend>
+              <legend className="formulario__legenda">
+                Informações do post
+              </legend>
               <div className="input-container">
                 <Field
                   name="title"
@@ -36,7 +40,7 @@ const CriaPost = () => {
                 />
                 <label className="input-label" htmlFor="title">
                   Título
-              </label>
+                </label>
               </div>
               <div className="input-container">
                 <Field
@@ -49,7 +53,7 @@ const CriaPost = () => {
                 />
                 <label className="input-label" htmlFor="metadescription">
                   Descrição do post
-              </label>
+                </label>
               </div>
               <div className="input-container">
                 <Field
@@ -62,7 +66,7 @@ const CriaPost = () => {
                 />
                 <label className="input-label" htmlFor="body">
                   Conteúdo
-              </label>
+                </label>
               </div>
 
               <div className="input-container">
@@ -74,13 +78,15 @@ const CriaPost = () => {
                   placeholder="Conteúdo"
                   required
                 >
-                  <option value="" disabled>Selecione</option>
+                  <option value="" disabled>
+                    Selecione
+                  </option>
                   <option value="bem-estar">Bem-estar</option>
                   <option value="comportamento">Comportamento</option>
                 </Field>
                 <label className="input-label" htmlFor="body">
                   Categorias
-              </label>
+                </label>
               </div>
 
               <div className="input-container">
@@ -92,19 +98,25 @@ const CriaPost = () => {
                   placeholder="Conteúdo"
                   required
                 >
-                  <option value="" disabled>Selecione</option>
-                  <option value="saude" defaultValue>Saúde</option>
+                  <option value="" disabled>
+                    Selecione
+                  </option>
+                  <option value="saude" defaultValue>
+                    Saúde
+                  </option>
                   <option value="higiene">Higiene</option>
                   <option value="treinamento">Treinamento</option>
                   <option value="educacao">Educação</option>
                 </Field>
                 <label className="input-label" htmlFor="body">
                   SubCategoria
-              </label>
+                </label>
               </div>
             </fieldset>
 
-            <button type="submit" className="botao">Criar</button>
+            <button type="submit" className="botao">
+              Criar
+            </button>
           </Form>
         </Formik>
       </section>
