@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import Cabecalho from "./components/Cabecalho";
-import Rotas from "./components/Rotas"
+import Rotas from "./Rotas"
 
 
 

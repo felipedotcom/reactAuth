@@ -1,14 +1,14 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import Home from "../paginas/Home";
-import Sobre from "../paginas/Sobre";
-import Categoria from "../paginas/Categoria";
-import Post from "../paginas/Post";
-import Pagina404 from "../paginas/Pagina404";
-import CriaPost from "../paginas/CriaPost";
-import Login from '../paginas/Login'
-import PrivateRoute from "../components/PrivateRoute";
+import Home from "./paginas/Home";
+import Sobre from "./paginas/Sobre";
+import Categoria from "./paginas/Categoria";
+import Post from "./paginas/Post";
+import Pagina404 from "./paginas/Pagina404";
+import CriaPost from "./paginas/CriaPost";
+import Login from './paginas/Login'
+import PrivateRoute from "./components/PrivateRoute";
 
 const Rotas = () => {
   return (
