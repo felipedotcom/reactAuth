@@ -1,8 +1,19 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from "react";
 
-const AuthContext = createContext({
-    estaAutenticado: false,
-    fazerLogin: () => {}
-});
+const AuthContext = createContext();
 
-export { AuthContext };
+const AuthBackend = ({ children }) => {
+  const [estaAutenticado, setAutenticado] = useState(false);
+  return (
+    <AuthContext.Provider
+      value={{
+        estaAutenticado,
+        fazerLogin: () => setAutenticado(true),
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+export { AuthContext, AuthBackend };
