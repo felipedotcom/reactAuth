@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { busca } from '../api/api'
 
-import '../assets/css/post.css'
-
 const Post = () => {
   const { id } = useParams()
   const [post, setPost] = useState({})
