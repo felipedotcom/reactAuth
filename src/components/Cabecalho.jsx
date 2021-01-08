@@ -22,7 +22,7 @@ const Cabecalho = () => {
       <nav className="menu-cabecalho">
         <span className="menu-cabecalho__fechar"></span>
         <ul className="menu-itens">
-          <li><NavLink to="#" className="menu-item menu-item--entrar">Entrar</NavLink></li>
+          <li><NavLink to="/login" className="menu-item menu-item--entrar">Entrar</NavLink></li>
           <li><NavLink to="#" className="menu-item">Produtos</NavLink></li>
           <li><NavLink to="/" className="menu-item">Blog</NavLink></li>
           <li><NavLink to="/sobre">Sobre</NavLink></li>

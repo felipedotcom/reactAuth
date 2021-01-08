@@ -1,11 +1,15 @@
-import React from "react";
-import { Formik, Field, Form } from "formik";
-import "../assets/css/componentes/inputs.css";
-import "../assets/css/componentes/botao.css";
+import React, { useContext } from 'react';
+import { Formik, Field, Form } from 'formik';
+import { AuthContext } from '../contexts/Auth/AuthContext';
 
-import { cria } from "../api/posts";
+import '../assets/css/componentes/inputs.css';
+import '../assets/css/componentes/botao.css';
+
+import { cria } from '../api/posts';
 
 const CriaPost = () => {
+  const { authInfo } = useContext(AuthContext);
+
   return (
     <main className="container flex flex--centro">
       <section className="cartao">
@@ -13,14 +17,14 @@ const CriaPost = () => {
         <Formik
           initialValues={{
             //Puxa pelo campo name do Field
-            title: "Meu post",
-            body: "",
-            metadescription: "",
-            categoria: "",
-            subcategoria: "",
+            title: 'Meu post',
+            body: '',
+            metadescription: '',
+            categoria: '',
+            subcategoria: '',
           }}
           onSubmit={async (infos) => {
-            const resp = await cria(infos);
+            const resp = await cria(infos, authInfo.accessToken);
             console.log(resp);
           }}
         >
