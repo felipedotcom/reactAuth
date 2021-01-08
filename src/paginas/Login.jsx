@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Formik, Field, Form } from "formik";
-import { AuthContext } from "../contexts/AuthContext";
-import { Redirect, useHistory } from "react-router-dom";
+import { AuthContext } from "../contexts/Auth/AuthContext";
+import {useHistory } from "react-router-dom";
 import "../assets/css/componentes/inputs.css";
 import "../assets/css/componentes/botao.css";
 
