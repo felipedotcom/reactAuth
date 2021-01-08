@@ -28,13 +28,19 @@ const Cabecalho = () => {
         <ul className="menu-itens">
           <li>
             {estaAutenticado ? (
-              <NavLink
-                to="#"
-                onClick={() => fazerLogoff()}
-                className="menu-item menu-item--entrar"
-              >
-                Sair
-              </NavLink>
+              <>
+                {' '}
+                <NavLink
+                  to="#"
+                  onClick={() => fazerLogoff()}
+                  className="menu-item menu-item--entrar"
+                >
+                  Sair
+                </NavLink>
+                <NavLink to="/posts/cria" className="menu-item">
+                  Criar Post
+                </NavLink>
+              </>
             ) : (
               <NavLink to="/login" className="menu-item menu-item--entrar">
                 Entrar

@@ -1,18 +1,22 @@
-import React, { useContext, useEffect } from "react";
-import { Formik, Field, Form } from "formik";
-import { AuthContext } from "../contexts/Auth/AuthContext";
-import {useHistory } from "react-router-dom";
-import "../assets/css/componentes/inputs.css";
-import "../assets/css/componentes/botao.css";
+import React, { useContext, useEffect } from 'react';
+import { Formik, Field, Form } from 'formik';
+import { AuthContext } from '../contexts/Auth/AuthContext';
+import { useHistory, useLocation } from 'react-router-dom';
+import '../assets/css/componentes/inputs.css';
+import '../assets/css/componentes/botao.css';
 
 const Login = () => {
   const { fazerLogin, estaAutenticado } = useContext(AuthContext);
+
   let history = useHistory();
+  let location = useLocation();
+  const { from } = location.state || { from: { pathname: '/' } };
   useEffect(() => {
     if (estaAutenticado) {
-      history.replace("/posts/cria");
+      history.replace(from);
     }
   }, [estaAutenticado]);
+
   return (
     <main className="container flex flex--centro">
       <section className="cartao">
@@ -20,8 +24,8 @@ const Login = () => {
         <Formik
           initialValues={{
             //Puxa pelo campo name do Field
-            email: "",
-            senha: "",
+            email: '',
+            senha: '',
           }}
           onSubmit={async (infos) => {
             const resp = await fazerLogin(infos);

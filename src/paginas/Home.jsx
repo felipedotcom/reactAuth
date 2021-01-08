@@ -1,9 +1,9 @@
-import React from 'react'
-import ListaPosts from '../components/ListaPosts'
-import ListaCategorias from '../components/ListaCategorias'
+import React from 'react';
+import ListaPosts from '../components/ListaPosts';
+import ListaCategorias from '../components/ListaCategorias';
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
-
   return (
     <main>
       <div className="container">
@@ -12,7 +12,7 @@ const Home = () => {
       <ListaCategorias />
       <ListaPosts url={'/posts'} />
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
