@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { api } from './api';
 
 const baseUrl = '/usuario';
@@ -21,10 +21,18 @@ function useAuth() {
   };
 
   const fazerLogoff = (dados) => {
-    localStorage.setItem('jwt', null);
+    localStorage.setItem('jwt', '');
     setAuthInfo({ accessToken: '' });
     setAutenticado(false);
   };
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem('jwt');
+    if (accessToken) {
+      setAutenticado(true);
+      setAuthInfo({ accessToken });
+    }
+  }, []);
 
   return [estaAutenticado, fazerLogin, fazerLogoff, authInfo];
 }
